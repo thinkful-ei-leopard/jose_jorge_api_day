@@ -10,7 +10,10 @@ import shoppingList from './shopping-list';
 
 
 api.getItems()
-  .then(res => console.log(res));
+  .then(response => response.json());
+  .then(response => console.log(response))
+
+// .then(res => console.log(res));
 
 const main = function () {
   shoppingList.bindEventListeners();
