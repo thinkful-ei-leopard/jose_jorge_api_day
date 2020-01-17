@@ -2,7 +2,8 @@
 export default {
     getItems,
     createItem,
-    updateItem
+    updateItem,
+    removeItem
 };
 
 const BASE_URL = 'https://thinkful-list-api.herokuapp.com/[joselopez]';
@@ -27,5 +28,12 @@ function updateItem(id, updateData) {
         method: 'PATCH',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(updateData)
+    })
+}
+
+
+function removeItem(id) {
+    fetch(`${BASE_URL}/items/${id}`, {
+        method: 'DELETE',
     })
 }
